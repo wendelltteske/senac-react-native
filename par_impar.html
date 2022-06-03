@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="numero" type="number" placeholder="informe o número" />
+
+    <button onclick="calcular()">Calcular</button>
+    <hr>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular(){
+            var numero = document.getElementById("numero").value
+            var mensagem = "impar"
+
+            if(numero == ''){
+                alert("Digite um numero")
+                document.getElementById("numero").focus()
+                return
+            }
+
+            if(numero % 2 == 0){
+                mensagem = "par"
+            }
+            document.getElementById("resultado").innerHTML = `O número ${numero} é ${mensagem}`
+        }
+    </script>
+</body>
+</html>
