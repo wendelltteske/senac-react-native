@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/estilos.css" />
+    <link rel="stylesheet" href="/aula21_01_06/estilização/clientes.css" />
+</head>
+
+<body>
+    <h1>Consulta de Clientes</h1>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Fone</th>
+            </tr>
+        </thead>
+        <tbody id="dados">
+
+        </tbody>
+    </table>
+    <button onclick="load()">Pesquisar</button>
+    <script>
+        var tabela = document.getElementById("dados")
+        function load() {
+            fetch("http://localhost:3000/clientes")
+                .then(x => x.json())
+                .then(clientes => {
+                    for (let i = 0; i < clientes.length; i++) {
+                        tabela.innerHTML +=
+                        `<td>${clientes[i].id}</td>
+                        <td>${clientes[i].nome}</td>
+                        <td>${clientes[i].email}</td>
+                        <td>${clientes[i].fone}</td>`
+                        
+                    }
+                })
+        }
+        function display(dados){
+            console.log(dados)
+        }
+    </script>
+</body>
+
+</html>
