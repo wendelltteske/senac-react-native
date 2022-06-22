@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Informe valor R$</label>
+    <input type="number" id="valor" /> <br>
+
+    <label>Informe taxa % </label>
+    <input type="number" id="taxa" /> <br>
+    
+    <label>Qtde parcelas</label>
+    <input type="number" id="qtdeParcelas" /> <br>
+
+    <button onclick="calcular()">Calcular</button>
+    <input onclick="verificar()" type="checkbox" id="jurocomposto">Aplicar Juro Composto</input> <br>
+
+    <hr>
+    <label id="juros"></label> <br>
+    <label id="valorParcela"></label>
+
+    <script>
+        function verificar(){
+            var cheackado = document.getElementById("jurocomposto")
+            if(cheackado.checked){
+                alert("Calculadora de Juros Compostos selecionada")
+                return
+            } else{
+                alert("Calculadora de Juros Simples selecionada")
+                return
+            }
+        }
+
+        function calcular(){
+            var valor = document.getElementById("valor").value
+            if(valor == ''){
+                alert("Informe o valor desejado")
+                document.getElementById("valor").focus()
+                return
+            }
+
+            var taxa = document.getElementById("taxa").value
+            if(taxa == ''){
+                alert("Informe a taxa desejada")
+                document.getElementById("taxa").focus()
+                return
+            }
+
+            var qtdeParcelas = document.getElementById("qtdeParcelas").value
+            if(qtdeParcelas == ''){
+                alert("Informe a quantidade de parcelas desejada(s)")
+                document.getElementById("qtdeParcelas").focus()
+                return
+            }
+
+            var valor = parseFloat(document.getElementById("valor").value)
+            var taxa = parseFloat(document.getElementById("taxa").value)
+            var qtdeParcelas = parseFloat(document.getElementById("qtdeParcelas").value)
+
+            var calculaJuroComposto = document.getElementById("jurocomposto")
+            var juros = 0
+            var x = qtdeParcelas
+            while(x > 0){
+                if(calculaJuroComposto.checked){
+                    juros += valor * (taxa/100)
+                    valor += juros
+                } else{
+                    juros += valor * (taxa/100)
+                }
+                x--
+            }
+
+            var valorParcela = (valor + juros)/qtdeParcelas
+            
+           document.getElementById("juros").innerHTML = `Juros: R$ ${juros.toFixed(2)}`
+           document.getElementById("valorParcela").innerHTML = `Valor de cada parcela: R$ ${valorParcela.toFixed(2)}`
+        }
+    </script>
+</body>
+</html>

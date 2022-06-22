@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="valorEmp" type="number" placeholder="Informe o valor do empréstimo" /> <br> <br>
+    <input id="taxaJ" type="number" placeholder="Informe a taxa de juros" /> <br> <br>
+    <input id="qntdP" type="number" placeholder="Informe a quantidade de parcelas" /> <br> <br>
+
+    <button onclick="calcular()">Calcular</button>
+    <hr>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular(){
+            var valorEmp = parseFloat(document.getElementById("valorEmp").value)
+            var taxaJ = parseFloat(document.getElementById("taxaJ").value)
+            var qntdP = parseFloat(document.getElementById("qntdP").value)
+
+            taxaJ = taxaJ/100
+            var juros =  valorEmp * taxaJ * qntdP
+            var valorFinal = valorEmp + juros
+
+
+            document.getElementById("resultado").innerHTML = `Valor da taxa: R$ ${juros.toFixed(2)}<br> Valor final: R$ ${valorFinal.toFixed(2)}`
+        }
+    </script>
+</body>
+</html>
