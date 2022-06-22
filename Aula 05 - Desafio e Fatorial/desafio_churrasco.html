@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <p>Desafio: churrasco</p>
+    </h1>
+    <hr>
+
+    <label>Informe a quantidade de pessoas:</label> <br>
+    <input id="numeroPessoas" type="number" placeholder="Número de pessoas" /> <br> <br>
+
+    <label>Informe em gramas o consumo por pessoa:</label> <br>
+    <input id="numeroConsumo" type="number" placeholder="Consumo em gramas" /> <br> <br>
+
+    <label>Informe o tipo de carne desejada:</label> <br>
+    <input id="numeroDescricao" type="text" placeholder="Tipo de carne" /> <br> <br>
+
+    <label>Informe preço do quilograma (kg) da carne:</label> <br>
+    <input id="numeroPreco" type="number" placeholder="Valor do kilo" /> <br> <br>
+
+    <button onclick="calcular()">Calcular</button> <br>
+    <hr>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular(){
+            var numeroPessoas = document.getElementById("numeroPessoas").value
+            var numeroConsumo = document.getElementById("numeroConsumo").value
+            var numeroDescricao = document.getElementById("numeroDescricao").value
+            var numeroPreco = document.getElementById("numeroPreco").value
+
+            if(numeroPessoas == ''){
+                alert("Digite o número de participantes")
+                document.getElementById("numeroPessoas").focus()
+                return
+            } else if(numeroConsumo == ''){
+                alert("Digite a quantidade que sera consumida por cada pessoa")
+                document.getElementById("numeroConsumo").focus()
+                return
+            } else if(numeroDescricao == ''){
+                alert("Digite a descrição do tipo desejado")
+                document.getElementById("numeroDescricao").focus()
+                return
+            } else if(numeroPreco == ''){
+                alert("Digite o preço da carne desejada")
+                document.getElementById("numeroPreco").focus()
+                return
+            }
+
+            var quantidadeTotal = (numeroPessoas * numeroConsumo)/1000
+            var precoTotal = (numeroConsumo * numeroPreco)/100
+            var taxa = numeroPreco * 15
+
+            if(numeroPessoas > 10){
+                precoTotal = precoTotal + taxa
+            }
+
+            document.getElementById("resultado").innerHTML = `A carne escolhida foi: ${numeroDescricao}. A quantidade total de carne será de ${quantidadeTotal} kg e total em dinheiro de: R$ ${precoTotal.toFixed(2)}`
+        }
+    </script>
+
+</body>
+</html>
