@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Informe suas frutas favoritas:</label>
+    <input type="text" id="frutas" placeholder="informe frutas"/>
+    <button onclick="salvar()" id="botao">Salvar</button>
+
+    <script>
+        var array = []
+        function salvar(){
+            var x = document.getElementById("frutas").value
+            array.push(x)
+            localStorage.setItem("frutas", array)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <a href="pagina1.html" target="centro">Pagina 1</a>
+        <a href="pagina2.html" target="centro">Pagina 2</a>
+        <label id="userconectado"></label>
+        <button id="button">Login</button>
+    </nav>
+    <iframe src="/storage.html" name=centro></iframe>
+
+        <script>
+            if(localStorage.getItem("usuarioLogado") != null){
+                document.getElementById("userconectado").innerHTML = localStorage.getItem("usuarioLogado")
+                document.getElementById("button").innerHTML = "Logout"
+                document.getElementById("button").addEventListener("click", logout)
+                mostrarUsuarioLogado("inline-block")
+            }
+            else{
+                mostrarUsuarioLogado("none")
+                document.getElementsByTagName("a")[0].style = "display:none"
+                document.getElementsByTagName("a")[1].style = "display:none"
+                document.getElementById("button".addEventListener("click", login))
+            }
+
+            function login(){
+                document.getElementsByTagName("iframe")[0].src = 'storage.html'
+            }
+
+            function logout(){
+                localStorage.removeItem("usuarioLogado")
+                window.location.reload()
+            }
+
+            function mostrarUsuarioLogado(mostrar){
+                document.getElementsByTagName("a")[0].style = `display:${mostrar}`
+                document.getElementsByTagName("a")[1].style = `display:${mostrar}`
+            }
+        </script>
+</body>
+
+</html>
