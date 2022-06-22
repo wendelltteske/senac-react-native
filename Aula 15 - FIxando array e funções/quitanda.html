@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: auto;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label>Descrição:</label>
+        <input type="text" id="descricao" placeholder="Informe descrição do produto" />
+
+        <label>Preço:</label>
+        <input type="text" id="preco" placeholder="Informe preco do produto" />
+
+        <label>Estoque:</label>
+        <input type="text" id="estoque" placeholder="Informe estoque do produto" />
+        <div>
+            <button onclick="comoVisualizar()">Salvar</button>
+            <button onclick="limpar()">Limpar</button>
+            <input type="checkbox" onclick="mostrar()" id="vertabela"> Visualizar em tabela? </input>
+        </div>
+        <table style="display: none">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Estoque</th>
+                </tr>
+            </thead>
+            <tbody id="dados">
+                <!--Dados inseridos via função
+                <tr>
+                    <td>Feijão</td>
+                    <td>7.89</td>
+                    <td>10</td>
+                </tr> -->
+            </tbody>
+        </table>
+        <div id="dadosparagrafo">
+
+        </div>
+    </div>
+    <script>
+        var produtos = []
+
+        function mostrar(){
+            if(document.getElementById("vertabela").checked){
+                document.getElementById("dadosparagrafo").style = "display: none"
+                document.getElementsByTagName("table")[0].style = "display: block"
+            }
+            else{
+                document.getElementById("dadosparagrafo").style = "display: block"
+                document.getElementsByTagName("table")[0].style = "display: none"
+            }
+        }
+
+        function comoVisualizar(){
+            if(document.getElementById("vertabela").checked){
+                add(showEmtabela)
+            }
+            else{
+                add(showEmParagrafo)
+            }
+        }
+
+        function add(callback) {
+            if (document.getElementById("descricao").value == '') {
+                alert("Informe a descrição do produto")
+                document.getElementById("descricao").focus()
+                return
+            }
+            if (document.getElementById("preco").value == '') {
+                alert("Informe o preço do produto")
+                document.getElementById("preco").focus()
+                return
+            }
+            if (document.getElementById("estoque").value == '') {
+                alert("Informe o estoque do produto")
+                document.getElementById("descricao").focus()
+                return
+            }
+            var obj = {
+                descricao: document.getElementById("descricao").value,
+                preco: document.getElementById("preco").value,
+                estoque: document.getElementById("estoque").value
+            }
+
+            produtos.push(obj)
+            console.log(produtos)
+            limpar()
+            callback()
+        }
+
+        function showEmtabela(){
+            var linhas = ""
+            for(let i = 0; i < produtos.length; i++){
+                linhas += 
+                `<tr><td>${produtos[i].descricao}</td>
+                     <td>${produtos[i].preco}</td>
+                     <td>${produtos[i].estoque}</td>
+                    </tr>`
+            }
+            console.log(linhas)
+            document.getElementById("dados").innerHTML = linhas
+        }
+
+        function showEmParagrafo(){
+            var linha = ''
+            for(let i = 0; i < produtos.length; i++){
+                linha += `<p>${produtos[i].descricao}   ${produtos[i].preco}   ${produtos[i].estoque}</p>`
+            }
+            document.getElementById("dadosparagrafo").innerHTML = linha
+        }
+
+        function limpar() {
+            document.getElementById("descricao").value = ''
+            document.getElementById("preco").value = ''
+            document.getElementById("estoque").value = ''
+        }
+    </script>
+</body>
+
+</html>
