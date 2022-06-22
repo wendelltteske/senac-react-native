@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: darkslategrey;
+        }
+
+        .container{
+            background-image: linear-gradient(rgb(6, 41, 41), rgb(12, 78, 78) ,rgb(29, 94, 94));
+            height: 28vh;
+            width: 350px;
+            margin: auto;
+            border: 2px solid rgb(6, 41, 41);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        .container-logo{
+            text-align: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .conteiner-conteudo{
+            color: white;
+            font-size: larger;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: flex;
+            flex-direction: column;
+            width: 290px;
+            margin: auto;
+        }
+
+        input{
+            border: 1px solid white;
+            border-radius: 15px;
+            font-size: 15px;
+            font-weight: bold;
+            color: rgb(107, 107, 107);
+            text-align: center;
+            height: 25px;
+        }
+
+        .btn{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        button{
+            border: 2px solid white;
+            border-radius: 10px;
+            width: 150px;
+            color: rgb(107, 107, 107);
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        button:hover{
+            background-color: rgb(41, 121, 121);
+            border-color: rgb(41, 121, 121);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container-logo">
+            <h2>QUAL É O SEU SIGNO?</h2>
+            <hr style="width: 300px;margin-top: -20px;color: transparent;">
+        </div>
+        <div class="conteiner-conteudo">
+            <label>Informe seu nome:</label>
+            <input id="nome" type="text" placeholder="informe nome" />
+
+            <label>Informe sua data de nascimento:</label>
+            <input id="dataNasc" type="date" />
+        </div>
+        <div class="btn">
+            <button style="height: 40px" onclick="mostrar()">Descobrir signo</button>
+            <button onclick="limpar()">Limpar campos</button>
+        </div>
+        <div id="dados"></div>
+    </div>
+
+    <script>
+        var dataJan = "Capricórnio"
+        var dataFev = "Aquário"
+        var dataMar = "Peixes"
+        var dataApr = "Áries"
+        var dataMai = "Touro"
+        var dataJun = "Gêmeos"
+        var dataJul = "Câncer"
+        var dataAgo = "Leão"
+        var dataSet = "Virgem"
+        var dataOut = "Libra"
+        var dataNov = "Escorpião"
+        var dataDez = "Sagitário"
+
+        function mostrar(){
+            var nome = document.getElementById("nome").value
+            var signos = new Date(document.getElementById("dataNasc").value)
+            var anoAtual = signos.getFullYear()
+            var mesAtual = signos.getMonth() +1
+            var diaAtual = signos.getDate() +1
+
+            if(mesAtual == 1 & diaAtual <= 19 | mesAtual == 12 & diaAtual >= 22){
+                alert(`Olá, ${nome}! Seu signo é ${dataJan}`)
+            } else if(mesAtual == 1 & diaAtual >=21 | mesAtual == 2 & diaAtual <= 18){
+                alert(`Olá, ${nome}! Seu signo é ${dataFev}`)
+            } else if(mesAtual == 2 & diaAtual >= 19 | mesAtual == 3 & diaAtual <= 20){
+                alert(`Olá, ${nome}! Seu signo é ${dataMar}`)
+            } else if(mesAtual == 3 & diaAtual >= 21 | mesAtual == 4 & diaAtual <= 20){
+                alert(`Olá, ${nome}! Seu signo é ${dataApr}`)
+            } else if(mesAtual == 4 & diaAtual >= 1 | mesAtual == 5 & diaAtual <= 20){
+                alert(`Olá, ${nome}! Seu signo é ${dataMai}`)
+            } else if(mesAtual == 5 & diaAtual >= 21 | mesAtual == 6 & diaAtual <= 20){
+                alert(`Olá, ${nome}! Seu signo é ${dataJun}`)
+            } else if(mesAtual == 6 & diaAtual >= 21 | mesAtual == 7 & diaAtual <= 22){
+                alert(`Olá, ${nome}! Seu signo é ${dataJul}`)
+            } else if(mesAtual == 7 & diaAtual >= 23 | mesAtual == 8 & diaAtual <= 22){
+                alert(`Olá, ${nome}! Seu signo é ${dataAgo}`)
+            } else if(mesAtual == 8 & diaAtual >= 23 | mesAtual == 9 & diaAtual <= 22){
+                alert(`Olá, ${nome}! Seu signo é ${dataSet}`)
+            } else if(mesAtual == 9 & diaAtual >= 23 | mesAtual == 10 & diaAtual <= 22){
+                alert(`Olá, ${nome}! Seu signo é ${dataOut}`)
+            } else if(mesAtual == 10 & diaAtual >= 23 | mesAtual == 11 & diaAtual <= 21){
+                alert(`Olá, ${nome}! Seu signo é ${dataNov}`)
+            } else if(mesAtual == 11 & diaAtual >= 22 | mesAtual == 12 & diaAtual <= 21){
+                alert(`Olá, ${nome}! Seu signo é ${dataDez}`)
+            }
+        }
+
+        function limpar(){
+            document.getElementById("nome").value = ''
+            document.getElementById("dataNasc").value = ''
+        }
+    </script>
+</body>
+</html>
