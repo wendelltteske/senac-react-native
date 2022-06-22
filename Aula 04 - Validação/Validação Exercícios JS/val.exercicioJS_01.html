@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="nome" type="text" placeholder="Informe o seu nome" /> <br>
+    <input id="anoNasc" type="number" placeholder="Informe o ano de nascimento" /> <br>
+    <input id="mesNasc" type="number" placeholder="Informe o mes de nascimento" /> <br>
+    <input id="diaNasc" type="number" placeholder="Informe o dia de nascimento" /> <br>
+
+    <button onclick="calcular()">Calcular</button>
+    <hr>
+    <p id="resultado"></p>
+    <script>
+        function calcular() {
+            var nome = document.getElementById("nome").value
+            var anoNasc = document.getElementById("anoNasc").value
+            var mesNasc = document.getElementById("mesNasc").value
+            var diaNasc = document.getElementById("diaNasc").value
+
+            if (nome == '') {
+                alert("Digite um nome")
+                document.getElementById("nome").focus()
+                return
+            } else if (anoNasc == '') {
+                alert("Digite algum ano")
+                document.getElementById("anoNasc").focus()
+                return
+            } else if (mesNasc == '') {
+                alert("Digite algum mes")
+                document.getElementById("mesNasc").focus()
+                return
+            } else if (diaNasc == '') {
+                alert("Digite algum dia")
+                document.getElementById("diaNasc").focus()
+                return
+            }
+
+            var data = new Date();
+            var anoAtual = data.getFullYear()
+            var mesAtual = data.getMonth() + 1
+            var diaAtual = data.getDate()
+
+            var idade = anoAtual - anoNasc
+
+            if (mesAtual < mesNasc | diaAtual < diaNasc) {
+                idade--
+            }
+            document.getElementById("resultado").innerHTML += `Olá ${nome}! Sua idade é: ${idade} anos`
+        }
+    </script>
+</body>
+
+</html>

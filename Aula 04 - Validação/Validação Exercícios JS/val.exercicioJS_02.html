@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="valor" type="number" placeholder="digite aqui o valor" /> <br>
+    <input id="taxa" type="number" placeholder="digite aqui a taxa" /> <br>
+
+    <button onclick="calcular()">Calcular</button>
+    <hr>
+    <p id="resultado"></p>
+    <script>
+        function calcular(){
+            var valor = parseFloat(document.getElementById("valor").value)
+            var taxa = parseFloat(document.getElementById("taxa").value)
+
+            if(valor == ''){
+                alert("Digite algum valor")
+                document.getElementById("valor").focus()
+                return
+            } else if(taxa == ''){
+                alert("Digite alguma taxa")
+                document.getElementById("taxa").focus()
+                return
+            }
+
+            var aumento = (valor * taxa)/100
+            aumento = aumento + valor
+            document.getElementById("resultado").innerHTML += `Valor com aumento igual a: R$ ${aumento.toFixed(2)}`
+        }
+    </script>
+</body>
+</html>

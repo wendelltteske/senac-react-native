@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="nome" type="text" placeholder="digite o seu nome" /> <br>
+    <input id="nota1" type="number" placeholder="digite a sua primeira nota" /> <br>
+    <input id="nota2" type="number" placeholder="digite a sua segunda nota" /> <br>
+    <input id="nota3" type="number" placeholder="digite a sua terceira nota" /> <br>
+
+    <button onclick="calcular()">Calcular</button>
+    <hr>
+    <p id="resultado"></p>
+    <script>
+        function calcular(){
+            var nome = document.getElementById("nome").value
+            var n1 = document.getElementById("nota1").value
+            var n2 = document.getElementById("nota2").value
+            var n3 = document.getElementById("nota3").value
+
+            if(nome == ''){
+                alert("Digite um nome")
+                document.getElementById("nome").focus()
+                return
+            } else if(n1 == ''){
+                alert("Digite a 1ª nota")
+                document.getElementById("nota1").focus()
+                return
+            } else if(n1 > 10){
+                alert("Digite apenas numeros menores que 10")
+                document.getElementById("nota1").focus()
+                return
+            } else if(n1 < 0){
+                alert("Digite apenas numeros menores que 10")
+                document.getElementById("nota1").focus()
+                return
+            } else if(n2 == ''){
+                alert("Digite a 2ª nota")
+                document.getElementById("nota2").focus()
+                return
+            } else if(n2 > 10){
+                alert("Digite apenas algarismos menores que 10")
+                document.getElementById("nota2").focus()
+                return
+            } else if(n2 < 0){
+                alert("Digite apenas algarismos maiores que 0")
+                document.getElementById("nota2").focus()
+                return
+            } else if(n3 == ''){
+                alert("Digite a 3ª nota")
+                document.getElementById("nota3").focus()
+                return
+            } else if(n3 > 10){
+                alert("Digite apenas algarismo menores que 10")
+                document.getElementById("nota3").focus()
+                return
+            } else if(n3 < 0){
+                alert("DIgite apenas algarismos maiores que 0")
+                document.getElementById("nota3").focus()
+                return
+            }
+
+            n1 = parseFloat(document.getElementById("nota1").value)
+            n2 = parseFloat(document.getElementById("nota2").value)
+            n3 = parseFloat(document.getElementById("nota3").value)
+
+            var media = (n1 + n2 + n3)/3
+            var situacao = "aprovado"
+
+            if(media < 7){
+                situacao = "reprovado"
+            }
+            document.getElementById("resultado").innerHTML = `Olá, ${nome}! Sua média é: ${media.toFixed(2)} e você está ${situacao}`
+        }
+    </script>
+</body>
+</html>
