@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/cadastro.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="dadoscadastro">
+        <fieldset class="fieldcadastro">
+            <legend style="font-weight: bold; color: white;"><i class="material-icons">content_paste</i>DADOS CADASTRAIS</legend>
+            <label class="labelcadastro">Informe o seu Nome:</label>
+            <input id="checkname" class="inputcadastro" type="text" placeholder="Informe o seu nome">
+            <label class="labelcadastro">Informe o Sobrenome:</label>
+            <input id="checksobrenome" class="inputcadastro" type="text" placeholder="Informe o seu sobrenome">
+            <label class="labelcadastro">Informe o seu CPF/CNPJ:</label>
+            <input id="checkcpf" class="inputcadastro" type="number" pattern="\d{3}\.\d{3}\.\d{3}\.\d{2}" required placeholder="CPF" />
+            <label class="labelcadastro">Informe a sua Data de Nascimento:</label>
+            <input id="checknascimento" style="height: 25px;" class="inputcadastro" type="date" placeholder="Informe a sua data de nascimento:">
+            <label class="labelcadastro">Informe o Estado Civil:</label>
+            <select class="selectcadastro" style="height: 25px; width: 26px;">
+                <option>...</option>
+                <option>CASADO(A)</option>
+                <option>SOLTEIRO(A)</option>
+                <option>VIÚVO(A)</option>
+                <option>DIVORCIADO(A)</option>
+            </select>
+        </fieldset>
+
+        <fieldset class="fieldcadastro">
+            <legend style="font-weight: bold; color: white;"><i class="material-icons">call</i>CONTATO</legend>
+            <label class="labelcadastro">Informe o Telefone:</label>
+            <select class="selectcadastro" style="height: 25px;">
+                <option>Telefone Residencial</option>
+                <option>Telefone Comercial</option>
+                <option>Telefone Celular</option>
+            </select>
+            <input id="checktelefone" class="inputcadastro" type="number" placeholder="Informe o número de telefone">
+            <label class="labelcadastro">Informe o Email:</label>
+            <input id="checkemail" class="inputcadastro" type="email" placeholder="Informe o email">
+        </fieldset>
+        <fieldset class="fieldcadastro">
+            <legend style="font-weight: bold; color: white;"><i class="material-icons">local_shipping</i>ENDEREÇO DE ENTREGA</legend>
+            <label class="labelcadastro">Informe o Estado:</label>
+            <select class="selectcadastro" style="height: 25px;">
+                <option>...</option>
+                <option>AC</option>
+                <option>AL</option>
+                <option>AP</option>
+                <option>AM</option>
+                <option>BA</option>
+                <option>CE</option>
+                <option>DF</option>
+                <option>ES</option>
+                <option>GO</option>
+                <option>MA</option>
+                <option>MT</option>
+                <option>MS</option>
+                <option>MG</option>
+                <option>PA</option>
+                <option>PB</option>
+                <option>PR</option>
+                <option>PE</option>
+                <option>PI</option>
+                <option>RJ</option>
+                <option>RN</option>
+                <option>RS</option>
+                <option>RO</option>
+                <option>RR</option>
+                <option>SC</option>
+                <option>SP</option>
+                <option>SE</option>
+                <option>TO</option>
+            </select>
+            <label class="labelcadastro">Informe o CEP:</label>
+            <input id="checkcep" class="inputcadastro" type="number" placeholder="CEP">
+            <label class="labelcadastro">Informe a Cidade:</label>
+            <input id="checkcidade" class="inputcadastro" type="text" placeholder="Cidade">
+            <label class="labelcadastro">Informe o Logradouro:</label>
+            <input id="checkrua" class="inputcadastro" type="text" placeholder="Logradouro">
+            <label class="labelcadastro">Informe o Número:</label>
+            <input id="checknumend" class="inputcadastro" type="number" placeholder="Nº">
+            <label class="labelcadastro">Email para Nota Fiscal Eletrônica</label>
+            <input id="checkemailnf" class="inputcadastro" type="email" placeholder="Email de NF" />
+        </fieldset>
+        <a href="cadastrofeito.html" target="centro"><button onclick="cadastrar()" class="botaocadastro"><i class="material-icons">send</i>Enviar</button></a>
+        <legend class="legendcadastro">Já possui cadastro?</legend>
+        <a class="logincadastro" href="">Clique aqui!</a>
+    </div>
+</body>
+<script>
+    function cadastrar() {
+        var checknome
+        if (document.getElementById("checkname").value == '') {
+            alert("Informe o seu nome!")
+            document.getElementById("checkname").focus()
+            return
+        } else {
+            checknome = document.getElementById("checkname").value
+        }
+        var checksobrenome
+        if (document.getElementById("checksobrenome").value == '') {
+            alert("Informe o seu sobrenome!")
+            document.getElementById("checksobrenome").focus()
+            return
+        } else {
+            checksobrenome = document.getElementById("checksobrenome").value
+        }
+        var checkcpf
+        if (document.getElementById("checkcpf").value == '') {
+            alert("Informe o CPF/CNPJ!")
+            document.getElementById("checkcpf").focus()
+            return
+        } else {
+            checkcpf = document.getElementById("checkcpf").value
+        }
+        var checknascimento
+        if (document.getElementById("checknascimento").value == '') {
+            alert("Informe a data de nascimento!")
+            document.getElementById("checknascimento").focus()
+            return
+        } else {
+            checknascimento = document.getElementById("checknascimento").value
+        }
+        var checktelefone
+        if (document.getElementById("checktelefone").value == '') {
+            alert("Informe o seu telefone")
+            document.getElementById("checktelefone").focus()
+            return
+        } else {
+            checktelefone = document.getElementById("checktelefone").value
+        }
+        var checkemail
+        if (document.getElementById("checkemail").value == '') {
+            alert("Informe o seu email!")
+            document.getElementById("checkemail").focus()
+            return
+        } else {
+            checkemail = document.getElementById("checkemail").value
+        }
+        var checkcep
+        if (document.getElementById("checkcep").value == '') {
+            alert("Informe o seu CEP")
+            document.getElementById("checkcep").focus()
+            return
+        } else {
+            checkcep = document.getElementById("checkcep").value
+        }
+        var checkcidade
+        if (document.getElementById("checkcidade").value == '') {
+            alert("Informe a sua cidade!")
+            document.getElementById("checkcidade").focus()
+            return
+        } else {
+            checkcidade = document.getElementById("checkcidade").value
+        }
+        var checklogradouro
+        if (document.getElementById("checkrua").value == '') {
+            alert("Informe o seu logradouro!")
+            document.getElementById("checkrua").focus()
+            return
+        } else {
+            checklogradouro = document.getElementById("checkrua").value
+        }
+        var checknumend
+        if (document.getElementById("checknumend").value == '') {
+            alert("Informe o número do seu endereço!")
+            document.getElementById("checknumend").focus()
+            return
+        } else {
+            checknumend = document.getElementById("checknumend").value
+        }
+        var checkemailnf
+        if (document.getElementById("checkemailnf").value == '') {
+            alert("Informe o email para receber a sua Nota Fiscal Eletrônica!")
+            document.getElementById("checkemailnf").focus()
+            return
+        } else {
+            checkemailnf = document.getElementById("checkemailnf").value
+        }
+
+    }
+</script>
+
+</html>

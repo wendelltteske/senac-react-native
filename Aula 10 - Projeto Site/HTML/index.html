@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUX-SHOES</title>
+    <link rel="stylesheet" href="/CSS/estilos.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        @media screen and (max-width:390px) {
+            .topo{
+                width: 46vh;
+                height: 20vw;
+                margin: auto;
+            }
+            .conteinerMenu{
+                display: flex;
+                flex-direction: column;
+                width: 100vw;
+                
+            }
+            iframe{
+                width: 100vw;
+                margin-right: -10px;
+            }
+            .rodape{
+            width: 100vw;
+            display: flex;
+            text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topo">
+        <img class="timg" src="/CSS/imagens/Sem Título-2.png" alt="capa" />
+    </div>
+    <ul class="conteinerMenu">
+        <li><a href="/HTML/home.html" target="centro"><i class="material-icons" style="width: 30px">home</i>Home</a>
+        </li>
+        <li><a href="/HTML/produtos.html" target="centro"><i class="material-icons"
+                    style="width: 30px">loyalty</i>Produtos</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn"><i class="material-icons"
+                    style="width: 30px">group_add</i>Minha Conta</a>
+            <div class="dropdown-content">
+                <a href="/HTML/cadastro.html" target="centro">Cadastro</a>
+                <a href="/HTML/dropdown-content.html/ajuda.html" target="centro">Ajuda</a>
+            </div>
+        </li>
+        <li><a href="/HTML/carrinho.html" target="centro"><i class="material-icons"
+                    style="width: 30px">shopping_cart</i>Carrinho</a></li>
+        <li><a href="/HTML/login.html" target="centro"><i class="material-icons"
+                    style="width: 30px">account_circle</i>Login</a></li>
+        <li style="float:right"><a class="active" href="/HTML/sobre_nos.html" target="centro"><i class="material-icons"
+                    style="width: 30px">store_mall_directory</i>Sobre</a></li>
+        <div class="conteinerAdm" style="float: right;margin-right: 45px; color: white;">
+            <i class="material-icons" style="width: 30px;">account_circle</i>Usuário
+            <button style="margin-right:50px">Logout</button>
+        </div>
+    </ul>
+    <iframe src="home.html" name="centro"></iframe>
+    <div class="rodape" style="position: absolute">
+        <p>Direitos Autorais reservados @Copyright.</p>
+    </div>
+
+</body>
+
+</html>

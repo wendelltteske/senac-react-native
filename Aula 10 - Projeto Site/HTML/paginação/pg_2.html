@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/CSS/produtos.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <img style="height: 175px;display: flex;margin: auto;" src="/CSS/imagens/teste.png" alt="teste" />
+            <i style="display: flex;font-size:150px;justify-content:center;color: aqua" class="material-icons">all_inclusive</i></h1>
+    </div>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p style="position: absolute; top: 10px; left: 5%;">Tênis Nike Air Max Excee</p>
+            <img src="" />
+        </div>
+    </div>
+    <div class="fotosprodutos">
+        <img src="/CSS/imagens/tenis3.jpg" class="fotos" onclick="showModal(this)" />
+        <img src="/CSS/imagens/tenis4.jpg" class="fotos" onclick="showModal(this)" />
+    </div>
+    <script>
+        var modal = document.getElementById("myModal")
+        function showModal(item) {
+            modal.style.display = "block"
+            modal.children[0].children[2].src = item.src
+        }
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script>
+    <div class="paginacao-centro">
+        <div class="paginacao">
+            <a style="font-weight: bold" href="/HTML/produtos.html">&laquo;</a>
+            <a style="font-weight: bold" href="/HTML/produtos.html">1</a>
+            <a style="font-weight: bold" href="/HTML/paginação/pg_2.html" class="active">2</a>
+            <a style="font-weight: bold" href="/HTML/paginação/pg_3.html">3</a>
+            <a style="font-weight: bold" href="/HTML/paginação/pg_4.html">4</a>
+            <a style="font-weight: bold" href="/HTML/paginação/pg_5.html">5</a>
+            <a style="font-weight: bold" href="/HTML/paginação/pg_3.html">&raquo;</a>
+        </div>
+    </div>
+</body>
+</html>

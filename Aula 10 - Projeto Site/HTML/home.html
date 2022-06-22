@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/estilos.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        *{box-sizing: border-box;}
+
+        .geral{
+            background-image: black;
+            margin: 0;
+            height: 750px;
+        }
+
+        .coluna-meio{
+            width: 50%;
+            margin: auto;
+        }
+
+        .barraPesquisa{
+            background-color:#333;
+            border: solid 3px #3c5b5c;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            align-items: center;
+            width: 750px;
+            height: 75px;
+        }
+
+        .txtBusca{
+            border: none;
+            border-radius: 0;
+            float: left;
+            text-align: center;
+            margin: 0;
+            background-color: transparent;
+            padding-left: 5px;
+            font-size: 30px;
+            color: white;
+            height: 75px;
+            width: 750px;
+        }
+
+        .botaoBusca{
+            border: none;
+            float: left;
+            height: 75px;
+            border-radius: 0 7px 7px 0;
+            width: 75px;
+            font-size: 20px;
+            font-weight: bold;
+            background: #3c5b5c;
+        }
+
+        .apoio{
+           background-color: rgb(89, 128, 245);
+           display: block;
+           justify-content: center;
+           margin-top: 150px;
+        }
+
+        @media screen and (max-width:390px) {
+            .geral{
+                width: 20vw;
+                height: 50vw;
+                
+            }
+            .barraPesquisa{
+                width: 296px;
+                height: 35px;
+                font-size: 20px;
+                text-align: left;
+                
+                
+            }
+            .botaoBusca{
+                margin-right: 20px;
+                height: 35px;
+                font-size: 15px;
+               
+              
+            }
+            .txtBusca{
+                font-size: 18px;
+                margin-left: 10px;
+            }
+            .apoio{
+                margin-top: 160vw;
+            }
+        } 
+    </style>
+</head>
+<body>
+    <div class="geral">    
+        <div class="coluna-meio">
+            <h1 style="font-size: 50px;text-align: center; font-family:sans-serif;font-weight: bold">BEM-VINDO(A)</h1>
+            <div class="barraPesquisa">
+                <i class="material-icons" style="color: #5f9ea0;margin-left: 10px; font-size: 40px;">search</i>
+                <input type="text" class="txtBusca" placeholder="Buscar produtos" />
+                <button class="botaoBusca">Buscar</button>
+            </div>
+        </div>
+    </div>
+    <div class="apoio">
+        <p style="text-align:center; font-size: 25px;font-weight: bold;font-family: Arial, Helvetica, sans-serif;color: white;">Apoio:</p>
+        <div style="display: flex;justify-content:center" class="apoio-img">
+            <img src="/CSS/imagens/entra21.png" alt="Apoio:" />
+        </div>
+    </div>
+</body>
+</html>
