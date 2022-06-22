@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="window.location.href='stringparaobjeto.html'">Navegar</button>
+    <script>
+        var carro = {
+            marca: "ford",
+            modelo: "ka",
+            ano: 2020,
+            cor: "vermelho"
+        }
+        console.log(carro)
+        console.log(carro.marca)
+
+        // converter o objeto criado para string
+        var stringcarro = JSON.stringify(carro)
+        console.log(stringcarro)
+        // note que não é possível identificar algum atributo do objeto
+        console.log(stringcarro.marca)
+        localStorage.setItem("carro", stringcarro)
+
+        var venda = {
+            data: "30/05/2022",
+            cliente: {
+                id: 1,
+                nome: "jose",
+                endereco: "Timbo"
+            },
+            itens: [
+                {
+                    id: 10,
+                    descricao: "milho",
+                    preco: 10,
+                    quantidade: 20
+                },
+                {
+                    id: 11,
+                    descricao: "banha",
+                    preco: 15,
+                    quantidade: 10
+                }
+            ]
+        }
+        console.log(venda)
+
+    </script>
+</body>
+
+</html>
