@@ -1,0 +1,69 @@
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+
+.containerprincipal{
+    background-color: cornflowerblue;
+    height: 8vh;
+    display:flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.menucontainer a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 6px;
+    background-color: darkcyan;
+    border-radius: 10px;
+    font-size: larger;
+}
+
+.menucontainer a:hover{
+    background-color: aqua;
+    color:black;
+}
+
+button:active{
+    background-color: blue;
+    padding: 3px;
+    color: white;
+}
+
+.containerlogo{
+    display: flex;
+    justify-content:left;
+    text-align: center;
+    color: white;
+    height: 65px;
+    padding: 3px;
+    width: 65px;
+}
+
+.containeradm{
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-right: 3px;
+}
+
+iframe{
+    width: 100vw;
+    height: 83vh;
+}
+
+.rodape{
+    background-color: #333;
+    height: 7vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
