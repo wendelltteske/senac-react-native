@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dropdown{
+            display: block;
+            background-color: brown;
+        }
+
+        .dropdown:hover .dropdown-content{
+            display: block;
+        }
+
+        .dropdown-content{
+            display: none;
+            background-color: chartreuse;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button>Ola</button>
+        <label>Dropdown Example</label>
+        <div class="dropdown-content">
+            Conteúdo Dropdown
+        </div>
+    </div>
+</body>
+</html>

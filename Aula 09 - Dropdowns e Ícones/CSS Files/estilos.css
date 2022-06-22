@@ -1,0 +1,65 @@
+body{
+    background-color: cornflowerblue;
+}
+
+.principal{
+    background-color: darkslateblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    border-radius: 15px;
+    width: 250px;
+    height: 50px;
+    padding: 15px;
+    border: 2px solid aqua;
+}
+
+button{
+    background-color: darkturquoise;
+    font-size: larger;
+    color: white;
+    height: 40px;
+    border-radius: 5px;
+    border-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.dropdownCadas{
+    display: block;
+}
+
+.dropdownCadas:hover .dropdown-contentCadas{
+    display: block;
+    font-size: large;
+    width: 100px;
+    text-align: center;
+    border: 2px solid white;
+}
+
+.dropdown-contentCadas{
+    display: none;
+    background-color: darkblue;
+    color: white;
+    position: absolute;
+}
+
+.dropdownConsul{
+    display: block;
+}
+
+.dropdownConsul:hover .dropdown-contentConsul{
+    display: block;
+    font-size: large;
+    width: 100px;
+    text-align: center;
+    border: 2px solid white;
+}
+
+.dropdown-contentConsul{
+    display: none;
+    background-color: darkblue;
+    color: white;
+    position: absolute;
+}
