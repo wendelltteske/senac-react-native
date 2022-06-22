@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Script</title>
+</head>
+<body>
+    <input id="n1" type="text" placeholder="Informe número" />
+    <button onclick="mostrar()">Clique aqui</button>
+    <hr>
+    <p id="paragrafo"></p>
+
+    <!-- Tudo o que estiver dentro de <script></script> é javascript -->
+    <script>
+        function mostrar(){
+            var z = document.getElementById("n1").value
+            document.getElementById("paragrafo").innerHTML = ""
+            while(z > 0){
+                document.getElementById("paragrafo").innerHTML += `<br>Linha ${z}`
+                z--
+            }
+        }
+    </script>
+</body>
+</html>

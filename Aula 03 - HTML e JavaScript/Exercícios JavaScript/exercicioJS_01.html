@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>Nome:</label>
+    <input id="nome" type="text" placeholder="Informe nome" />
+
+    <label>Ano de Nascimento:</label>
+    <input id="anoNasc" type="number" placeholder="Informe ano de nascimento" />
+
+    <label>Mês de Nascimento:</label>
+    <input id="mesNasc" type="number" placeholder="Informe o mês de nascimento" />
+
+    <label>Dia de Nascimento:</label>
+    <input id="diaNasc" type="number" placeholder="Informe o dia de nascimento" />
+
+    <p id="resultado"></p>
+    <button onclick="calcular()">Calcular</button>
+
+    <script>
+        function calcular() {
+            var nome = document.getElementById("nome").value
+            var data = new Date()
+
+            var anoAtual = data.getFullYear()
+            var mesAtual = data.getMonth() + 1
+            var diaAtual = data.getDate()
+
+            var anoNasc = document.getElementById("anoNasc").value
+            var mesNasc = document.getElementById("mesNasc").value
+            var diaNasc = document.getElementById("diaNasc").value
+
+            var idade = anoAtual - anoNasc
+            if(mesAtual < mesNasc | diaAtual < diaNasc){
+                idade--
+            }
+            document.getElementById("resultado").innerHTML = `Olá ${nome}, você tem ${idade} anos!`
+        }
+    </script>
+</body>
+
+</html>
