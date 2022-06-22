@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color: rgb(31, 167, 221);
+        }
+
+        .container{
+            background-color:rgb(32, 118, 151);
+            color:azure;
+            margin: auto;
+            width: 400px;
+            padding: 15px;
+            border: 5px solid rgba(30, 100, 109, 0.438);
+            border-radius: 20px;
+            padding-bottom: 5px;
+            font-size: large;
+        }
+
+        fieldset{
+            border: 2px solid rgba(19, 66, 72, 0.438);
+            border-radius: 10px;
+        }
+
+        legend{
+            font-size: 25px;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium';
+        }
+
+        label{
+            font-size: 25px;
+            font-family: 'Arial';
+        }
+
+        input{
+            background-color: rgb(207, 226, 229);
+            width: 360px;
+            font-size:larger;
+            margin:auto;
+            border: 3px solid rgb(16, 89, 99);
+            border-radius: 10px;
+
+        }
+
+        .foto{
+            margin: auto;
+            width: 200px;
+        }
+
+        .buttons{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px;
+        }
+
+        button{
+            width: 32%;
+            height: 40px;
+            background-color: rgb(24, 224, 224);
+            border: 3px solid white;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <fieldset>
+            <legend>Dados pessoais</legend>
+                <label>Informe Nome:</label> <br>
+                <input id="nome" type="text" /> <br>
+                <label>Informe Sobrenome:</label> <br>
+                <input id="sobrenome" type="text" /> <br>
+                <label>Data de nascimento:</label> <br>
+                <input id="dataNasci" type="date" />
+        </fieldset>
+
+        <fieldset>
+            <legend>Foto</legend>
+            <label>Informe imagem:</label> <br>
+        <div class="foto">
+        <img src="/Imagens/cadastro.jpg" style="width: 202px; height: 190px; border: 1.5px solid darkblue; margin:auto">
+        </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Contato</legend>
+            <label>Informe telefone de contato:</label> <br>
+            <input id="fone" type="text" /> <br>
+            <label>Informe email:</label> <br>
+            <input id="email" type="text" /> <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Localização</legend>
+            <label>Informe Estado:</label> <br>
+            <input id="estado" type="text" /> <br>
+            <label>Informe Cidade:</label> <br>
+            <input id="cidade" type="text" /> <br>
+            <label>Informe Bairro</label> <br>
+            <input id="bairro" type="text" /> <br>
+            <label>Informe Endereço</label> <br>
+            <input id="endereco" type="text" /> <br>
+            <label>Informe o número do endereço</label>
+            <input id="numeroEndereco" type="text" /> <br>
+        </fieldset>
+
+        <div class="buttons">
+            <button>SALVAR</button>
+            <button>CANCELAR</button>
+        </div>
+    </div>
+</body>
+</html>

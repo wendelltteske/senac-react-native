@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: silver;
+            width: 396px;
+            margin: auto;
+            padding: 20px;
+            border: 3px solid rgb(111, 111, 111);
+            border-radius: 15px;
+        }
+
+        .container-cont{
+            display: flex;
+            flex-direction: column;
+        }
+
+        label{
+            font-size: 27px;
+            font-family: 'Franklin Gothic Medium';
+            color: white;
+            margin-top: 15px;
+        }
+
+        input{
+            text-align: center;
+            font-size: larger;
+            height: 30px;
+            border: 2px solid rgb(111, 111, 111);
+            border-radius: 10px;
+        }
+
+        button{
+            width: 30%;
+            height: 40px;
+            margin-top: 15px;
+            font-size: larger;
+            font-weight: bold;
+            border: 2px solid white;
+            border-radius: 20px;
+            background-color: #333;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .botoes{
+            display: flex;
+            justify-content:center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Desafio CSS: Cadastro</h1>
+    <hr>
+    <div class="container">
+        <div class="container-cont">
+            <label>Informe seu nome:</label>
+            <input id="nome" type="text" placeholder="Informe nome" />
+    
+            <label>Informe seu sobrenome:</label>
+            <input id="sobrenome" type="text" placeholder="Informe sobrenome" />
+    
+            <label>Informe seu fone:</label>
+            <input id="fone" type="text" placeholder="Informe fone" />
+    
+            <label>Informe seu email</label>
+            <input id="email" type="text" placeholder="Informe email" />
+    
+            <label>Informe sua data de nascimento:</label>
+            <input id="datanasc" type="date" placeholder="Informe data nascimento" />
+        </div>
+        <div class="botoes">
+            <button>Salvar</button>
+            <button>Cancelar</button>
+        </div>
+    </div>
+</body>
+</html>
