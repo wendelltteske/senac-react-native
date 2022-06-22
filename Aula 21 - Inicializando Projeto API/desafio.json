@@ -1,0 +1,83 @@
+{
+    "venda":[
+        {
+            "id": 1,
+            "data":"10/05/2022",
+            "cliente":[
+                {
+                    "id":1,
+                    "nome":"Ava",
+                    "fone":"47 9982-2834",
+                    "endereco": [
+                        {
+                            "estado":"SC",
+                            "cidade":"Timbó",
+                            "bairro":"Quintino",
+                            "logradouro":"Maravilha",
+                            "numero_log":"474"
+                        }
+                    ]
+                }
+            ]
+            ,
+            "produtos":[
+                {
+                    "id":1,
+                    "marca":"Ford",
+                    "modelo":"Mustang",
+                    "placa":"ABC-1234",
+                    "cor":"preto",
+                    "preco":500000
+                },
+                {
+                    "id":2,
+                    "marca":"Dodge",
+                    "modelo":"RAM",
+                    "placa":"XYZ",
+                    "cor":"prata",
+                    "preco":650000
+                }
+            ]
+        }
+        ,
+        {
+            "id": 2,
+            "data":"25/07/2020",
+            "cliente":[
+                {
+                    "id":1,
+                    "nome":"Ava",
+                    "fone":"47 9982-2834",
+                    "endereco": [
+                        {
+                            "estado":"SC",
+                            "cidade":"Timbó",
+                            "bairro":"Quintino",
+                            "logradouro":"Maravilha",
+                            "numero_log":"474"
+                        }
+                    ]
+                }
+            ]
+            ,
+            "produtos":[
+                {
+                    "id":1,
+                    "marca":"Ford",
+                    "modelo":"Mustang",
+                    "placa":"ABC-1234",
+                    "cor":"preto",
+                    "preco":500000
+                },
+                {
+                    "id":2,
+                    "marca":"Dodge",
+                    "modelo":"RAM",
+                    "placa":"XYZ",
+                    "cor":"prata",
+                    "preco":650000
+                }
+            ]
+        }
+    ]
+}
